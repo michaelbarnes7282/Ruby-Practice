@@ -4,12 +4,7 @@
 
 def only_vowels?(str)
     vowels = "aeiou"
-    str.each_char do |c|
-        if !vowels.include? c
-            return false
-        end
-    end
-    true
+    str.split("").all? {|c| vowels.include? c}
 end
 
 p only_vowels?("aaoeee")  # => true
