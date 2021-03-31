@@ -11,7 +11,7 @@ def scalar_multiple!(array, multiplier)
     (0...temp.length).each do |i|
         temp[i] *= multiplier
     end
-    array = temp
+    temp
 end
 
 

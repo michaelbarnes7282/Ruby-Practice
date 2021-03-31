@@ -9,7 +9,7 @@
 def replace_char_at!(str, char, idx)
     res = str
     res[idx] = char
-    str = res
+    res
 end
 
 
