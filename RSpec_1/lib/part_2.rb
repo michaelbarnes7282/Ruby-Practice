@@ -8,3 +8,14 @@ def hipsterfy(str)
     end
     str
 end
+
+def vowel_counts(str)
+    vowels = "aeiou"
+    hash = Hash.new(0)
+    str.each_char do |c|
+        if vowels.include? c.downcase
+            hash[c.downcase] += 1
+        end
+    end
+    hash
+end
