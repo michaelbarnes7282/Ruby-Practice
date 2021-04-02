@@ -7,9 +7,8 @@
 # to be the same before and after calling your method.
 
 def replace_char_at!(str, char, idx)
-    res = str
-    res[idx] = char
-    res
+    str[idx] = char
+    str
 end
 
 
