@@ -11,16 +11,16 @@
 
 
 def my_rotate!(array, amt)
-    clone = array.clone
-    length = array.length
-    (0...length).each do |i|
-        num = i + amt
-        if num > length-1
-            num -= length
-        elsif num < 0
-            num += length
+    if amt > 0
+        amt.times do
+            ele = array.shift
+            array << ele
         end
-        array[i] = clone[num]
+    else
+        (-amt).times do
+            ele = array.pop
+            array.unshift(ele)
+        end
     end
     array
 end
