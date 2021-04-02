@@ -7,13 +7,13 @@
 # to be the same before and after calling your method.
 
 def ele_replace!(array, hash)
-    (0...array.length).each do |i|
-        if hash.include?(array[i])
-            array[i] = hash[array[i]]
+    array.map! do |ele|
+        if hash.include?(ele)
+            ele = hash[ele]
+        else
+            ele
         end
     end
-
-    array
 end
 
 
