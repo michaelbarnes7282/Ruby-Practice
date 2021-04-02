@@ -6,6 +6,10 @@ describe "Part 1:" do
       expect { average(4, 8) }.to_not raise_error
     end
 
+    it "should not accept strings" do
+      expect { average('a', 'b') }. to raise_error
+    end
+
     it "should return the average of the two numbers" do
       expect(average(4, 8)).to eq(6)
       expect(average(5, 10)).to eq(7.5)
