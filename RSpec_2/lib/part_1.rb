@@ -12,14 +12,17 @@ end
 
 def merge(hash_1, hash_2)
     res = Hash.new(nil)
-    hash_1.each do |h|
-        res[h[0]] = h[1]
+    hash_1.each do |k, v|
+        res[k] = v
     end
-    hash_2.each do |h|
-        res[h[0]] = h[1]
+    hash_2.each do |k, v|
+        res[k] = v
     end
+    p res
     res
 end
+
+merge({"a"=>10, "b"=>20}, {"c"=>30, "d"=>40, "e"=>50})
 
 def censor(str, arr)
     vowels = "aeiou"
