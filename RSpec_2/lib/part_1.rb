@@ -21,4 +21,14 @@ def merge(hash_1, hash_2)
     res
 end
 
-merge({"a"=>10, "b"=>20}, {"a"=>10, "b"=>20})
+def censor(str, arr)
+    vowels = "aeiou"
+    res = str.split(" ").map do |word|
+        if arr.include? word.downcase # Word needs to be censored
+            word.chars.map { |c| vowels.include?(c.downcase) ? "*" : c }.join()
+        else
+            word
+        end
+    end
+    res.join(" ")
+end
