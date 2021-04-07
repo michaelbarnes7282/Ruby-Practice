@@ -32,3 +32,19 @@ def censor(str, arr)
     end
     res.join(" ")
 end
+
+def power_of_two?(num)
+    if num == 0
+        return false
+    else
+        while num != 1
+            num /= 2
+            if num%2 != 0 && num != 1
+                return false
+            end
+        end
+    end
+    return true
+end
+
+
