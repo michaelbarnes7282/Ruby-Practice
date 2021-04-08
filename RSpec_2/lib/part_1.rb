@@ -12,17 +12,13 @@ end
 
 def merge(hash_1, hash_2)
     res = Hash.new(nil)
-    hash_1.each do |k, v|
-        res[k] = v
-    end
-    hash_2.each do |k, v|
-        res[k] = v
-    end
-    p res
+
+    hash_1.each { |k, v| res[k] = v }
+    hash_2.each { |k, v| res[k] = v }
+
     res
 end
 
-merge({"a"=>10, "b"=>20}, {"c"=>30, "d"=>40, "e"=>50})
 
 def censor(str, arr)
     vowels = "aeiou"
@@ -37,17 +33,13 @@ def censor(str, arr)
 end
 
 def power_of_two?(num)
-    if num == 0
-        return false
-    else
-        while num != 1
-            num /= 2
-            if num%2 != 0 && num != 1
-                return false
-            end
-        end
+    product = 1
+
+    while product < num
+        product *= 2
     end
-    return true
+
+    product == num
 end
 
 
