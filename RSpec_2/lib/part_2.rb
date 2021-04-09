@@ -24,13 +24,5 @@ def substrings(str)
 end
 
 def palindrome_substrings(str)
-    ans = []
-
-    substrings(str).each do |word|
-        if palindrome?(word) && word.length > 1
-            ans << word
-        end
-    end
-
-    ans
+    substrings(str).select { |sub| palindrome?(sub) && sub.length > 1 }
 end
