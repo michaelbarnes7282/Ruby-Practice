@@ -16,5 +16,17 @@ def largest_prime_factor(num)
     (2..num).reverse_each do |n|
         return n if prime?(n) && num % n == 0
     end
+end
 
+def unique_chars?(str)
+    chars = []
+    str.each_char do |c|
+        if chars.include? c
+            return false
+        else
+            chars << c
+        end
+    end
+
+    true
 end
