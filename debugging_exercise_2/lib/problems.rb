@@ -3,6 +3,7 @@
 # Feel free to use the debugger when you get stuck.
 
 require "byebug"
+require "set"
 
 def prime?(num)
     return false if num < 2
@@ -41,4 +42,8 @@ def dupe_indices(arr)
     end
 
     hash.select { |k, v| hash[k].length > 1 }
+end
+
+def ana_array(arr1, arr2)
+    arr1.to_set == arr2.to_set
 end
