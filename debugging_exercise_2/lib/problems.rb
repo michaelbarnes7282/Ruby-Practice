@@ -2,6 +2,8 @@
 # You should implement your methods in this file.
 # Feel free to use the debugger when you get stuck.
 
+require "byebug"
+
 def prime?(num)
     return false if num < 2
 
@@ -29,4 +31,14 @@ def unique_chars?(str)
     end
 
     true
+end
+
+def dupe_indices(arr)
+    hash = Hash.new{ |h,k| h[k] = [] }
+
+    arr.each_with_index do |ele, i|
+        hash[ele].push(i)
+    end
+
+    hash.select { |k, v| hash[k].length > 1 }
 end
