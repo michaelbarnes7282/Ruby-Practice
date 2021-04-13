@@ -16,7 +16,7 @@ def prime?(num)
 end
 
 def largest_prime_factor(num)
-    (2..num).reverse_each do |n|
+    num.downto(2) do |n|
         return n if prime?(n) && num % n == 0
     end
 end
