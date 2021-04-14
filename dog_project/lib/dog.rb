@@ -24,7 +24,7 @@ class Dog
     end
 
     def bark
-        @age > 3 ? @bark.upcase : @bark.downcase
+        age > 3 ? @bark.upcase : @bark.downcase
     end
 
     def favorite_foods
