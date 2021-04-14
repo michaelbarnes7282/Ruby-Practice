@@ -33,4 +33,9 @@ class Array
     count
   end
 
+  def my_index(val)
+    self.each_with_index { |ele, i| return i if ele == val }
+    nil
+  end
+
 end
