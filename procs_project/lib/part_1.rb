@@ -33,3 +33,9 @@ def my_all?(arr, &prc)
 
     true
 end
+
+def my_none?(arr, &prc)
+    arr.each { |ele| return false if prc.call(ele) }
+
+    true
+end
