@@ -44,4 +44,15 @@ class Array
     new_arr
   end
 
+  def my_transpose
+    res = Array.new(self.length){[]}
+    self.each_with_index do |arr, i|
+        arr.each_with_index do |ele, j|
+            res[j].push(ele)
+        end
+    end
+
+    res
+  end
+
 end
