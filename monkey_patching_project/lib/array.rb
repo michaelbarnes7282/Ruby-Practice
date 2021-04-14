@@ -20,4 +20,11 @@ class Array
         self[self.length/2]
     end
   end
+
+  def counts
+    count = Hash.new{0}
+    self.each { |ele| count[ele] += 1}
+    count
+  end
+
 end
