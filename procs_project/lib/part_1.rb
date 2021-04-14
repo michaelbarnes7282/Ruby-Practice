@@ -27,3 +27,9 @@ def my_any?(arr, &prc)
 
     false
 end
+
+def my_all?(arr, &prc)
+    arr.each { |ele| return false if !prc.call(ele) }
+
+    true
+end
