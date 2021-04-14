@@ -38,4 +38,10 @@ class Array
     nil
   end
 
+  def my_uniq
+    new_arr = []
+    self.each { |ele| new_arr << ele if !new_arr.include? ele }
+    new_arr
+  end
+
 end
