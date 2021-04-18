@@ -29,11 +29,63 @@ class Hangman
   end
 
   def get_matching_indices(char)
-    @secret_word.split("").each_index.select{ |i| @secret_word[i] == char }
+    matching_indices = []
+
+    @secret_word.each_char.with_index{ |c, i| matching_indices << i if c == char }
+    matching_indices
   end
 
   def fill_indices(char, arr)
     arr.each { |i| guess_word[i] = char}
   end
+
+  def try_guess(char)
+    if self.already_attempted?(char)
+      p "that has already been attempted"
+      return false
+    end
+    
+    @attempted_chars << char
+
+    matches = self.get_matching_indices(char)
+    self.fill_indices(char, matches)
+
+    @remaining_incorrect_guesses -= 1 if matches.empty?
+
+    true
+  end
+
+  def ask_user_for_guess
+    p "Enter a char:"
+    input = gets.chomp
+    self.try_guess(input)
+  end
+
+  def win?
+    if @guess_word.join("") == @secret_word
+      p "WIN"
+      return true
+    end
+    false
+  end
+
+  def lose?
+    if @remaining_incorrect_guesses == 0
+      p "LOSE"
+      return true
+    end
+
+    false
+  end
+
+  def game_over?
+    if self.win? || self.lose?
+      p @secret_word
+      return true
+    end
+
+    false
+  end
+
 
 end
