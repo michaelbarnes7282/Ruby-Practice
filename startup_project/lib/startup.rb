@@ -45,4 +45,21 @@ class Startup
         employees.each { |employee| pay_employee(employee) }
     end 
 
+    def average_salary
+        sum = 0
+        @employees.each { |employee| sum += @salaries[employee.title]}
+        sum / @employees.length
+    end
+
+    def close
+        @employees = []
+        @funding = 0
+    end
+
+    def acquire(startup)
+        @funding += startup.funding
+        startup.salaries.each { |name, salary| @salaries[name] = salary if !@salaries.include? name }
+        startup.employees.each { |employee| @employees << employee }
+        startup.close
+    end
 end
